@@ -1,12 +1,15 @@
 import React, { Fragment } from 'react';
-import { Header } from '../components/header';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Layout } from '../components/layout';
 import './App.scss';
 
 function App() {
   return (
-    <>
-      <Header />
-    </>
+    <BrowserRouter>
+      <Layout>
+        <Switch></Switch>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
