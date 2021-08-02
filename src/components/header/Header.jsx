@@ -1,11 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import './Header.scss';
 import { NavBar } from '../navbar';
 
 export const Header = () => {
   return (
-    <>
-      <h1>header</h1>
+    <header className='header'>
+      <div className='header__logotipo'>
+        <h1>E-commerce</h1>
+      </div>
       <NavBar />
-    </>
+    </header>
   );
 };

@@ -1,0 +1,13 @@
+.navbar {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  &__item {
+    list-style: none;
+    text-decoration: none;
+    margin: 0 15px;
+    color: white;
+  }
+}
