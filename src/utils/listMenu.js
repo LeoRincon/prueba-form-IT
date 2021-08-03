@@ -2,23 +2,23 @@ export const listMenu = {
   items: [
     {
       id: 1,
-      name: 'Inicio',
+      name: 'Carro',
     },
     {
       id: 2,
-      name: 'Nosotros',
+      name: 'Avión',
     },
     {
       id: 3,
-      name: 'Catalogo',
+      name: 'Jet',
     },
     {
       id: 4,
-      name: 'Contactenos',
+      name: 'Camion',
     },
     {
       id: 5,
-      name: 'Blog',
+      name: 'Autobus',
     },
   ],
 };

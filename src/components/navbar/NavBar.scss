@@ -4,10 +4,19 @@
   display: flex;
   align-items: center;
 
-  &__item {
+  &__list {
     list-style: none;
-    text-decoration: none;
-    margin: 0 15px;
-    color: white;
+    margin: 0 8px;
+    cursor: pointer;
+
+    &--item {
+      text-decoration: none;
+      color: white;
+      padding: 5px;
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
   }
 }

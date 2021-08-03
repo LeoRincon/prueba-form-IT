@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { listMenu } from '../../utils/listMenu';
 import './NavBar.scss';
 
@@ -9,8 +10,10 @@ export const NavBar = () => {
     <nav>
       <ul className='navbar'>
         {items.map((item) => (
-          <li className='navbar__item' key={item.id}>
-            {item.name}
+          <li className='navbar__list' key={item.id}>
+            <Link className='navbar__list--item' to={`/${item.name}`}>
+              {item.name}
+            </Link>
           </li>
         ))}
       </ul>
