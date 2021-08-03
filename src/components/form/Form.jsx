@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import { Modal } from '../../components/modal';
 import './Form.scss';
 
 export const Form = ({ name }) => {
@@ -84,6 +86,7 @@ export const Form = ({ name }) => {
         </select>
         <button onClick={handleClick}>Agregar</button>
       </form>
+      {ReactDOM.createPortal(<Modal />, document.getElementById('modal'))}
     </main>
   );
 };
