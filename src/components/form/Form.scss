@@ -10,7 +10,7 @@ main {
   width: 70%;
   min-width: 320px;
   max-width: 520px;
-  height: 430px;
+  height: 480px;
   position: relative;
   transform: translateY(40px);
   display: flex;
@@ -55,5 +55,11 @@ main {
     &:hover {
       transform: scale(1.1);
     }
+  }
+
+  &--declaimer {
+    font-size: 1.6rem;
+    transform: translateY(20px);
+    text-decoration: underline;
   }
 }

@@ -76,12 +76,12 @@ export const Form = ({ name }) => {
       <form className='form'>
         {error && (
           <p className='form--message-error'>
-            **debe diligenciar todos los campos**
+            **Debe diligenciar todos los campos**
           </p>
         )}
         {erroFrom && (
           <p className='form--message-error'>
-            ** Los campos en rojo estan mal diligenciados **
+            ** Los campos en rojo están mal diligenciados **
           </p>
         )}
         <h3 className='form--title'>
@@ -126,6 +126,7 @@ export const Form = ({ name }) => {
           max='100'
         />
         <button onClick={handleClick}>Agregar</button>
+        <p className='form--declaimer'>Los campos con * son obligatorios</p>
       </form>
       {ReactDOM.createPortal(
         lightbox && <Modal />,
