@@ -35,6 +35,7 @@ export const Form = ({ name }) => {
       setTimeout(() => {
         setErroFrom(false);
       }, 3000);
+      return;
     }
   };
 
