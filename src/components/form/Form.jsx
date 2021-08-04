@@ -6,9 +6,10 @@ import './Form.scss';
 
 export const Form = ({ name }) => {
   const [error, setError] = useState(false);
+  const [erroFrom, setErroFrom] = useState(false);
   const [lightbox, setLightbox] = useState(false);
   const [isValided, setIsValided] = useState(false);
-  const [state, setstate] = useState({
+  const [state, setState] = useState({
     nombre: '',
     email: '',
     celular: '',
@@ -16,7 +17,7 @@ export const Form = ({ name }) => {
   });
 
   const actualizarState = (e) => {
-    setstate({
+    setState({
       ...state,
       [e.target.name]: e.target.value,
     });
@@ -29,6 +30,11 @@ export const Form = ({ name }) => {
       if (state.edad >= 18 && state.edad <= 100) {
         setIsValided(true);
       }
+    } else {
+      setErroFrom(true);
+      setTimeout(() => {
+        setErroFrom(false);
+      }, 3000);
     }
   };
 
@@ -46,27 +52,35 @@ export const Form = ({ name }) => {
       }, 2000);
       return;
     }
+
     validateInput();
-    setLightbox(true);
 
-    setTimeout(() => {
-      setLightbox(false);
-    }, 5000);
-    console.log(state);
-
-    setstate({
-      nombre: '',
-      email: '',
-      celular: '',
-      edad: '',
-    });
+    if (isValided) {
+      setLightbox(true);
+      setTimeout(() => {
+        setLightbox(false);
+      }, 5000);
+      console.log(state);
+      setState({
+        nombre: '',
+        email: '',
+        celular: '',
+        edad: '',
+      });
+    }
   };
+
   return (
     <main>
       <form className='form'>
         {error && (
           <p className='form--message-error'>
             **debe diligenciar todos los campos**
+          </p>
+        )}
+        {erroFrom && (
+          <p className='form--message-error'>
+            ** Los campos en rojo estan mal diligenciados **
           </p>
         )}
         <h3 className='form--title'>
@@ -111,7 +125,6 @@ export const Form = ({ name }) => {
           max='100'
         />
         <button onClick={handleClick}>Agregar</button>
-        {isValided && <p>hola</p>}
       </form>
       {ReactDOM.createPortal(
         lightbox && <Modal />,
