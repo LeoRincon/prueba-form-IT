@@ -36,6 +36,11 @@ export const Form = ({ name }) => {
 
     setLightbox(true);
 
+    setTimeout(() => {
+      setLightbox(false);
+    }, 5000);
+    console.log(state);
+
     setstate({
       nombre: '',
       email: '',
@@ -86,7 +91,10 @@ export const Form = ({ name }) => {
         </select>
         <button onClick={handleClick}>Agregar</button>
       </form>
-      {ReactDOM.createPortal(<Modal />, document.getElementById('modal'))}
+      {ReactDOM.createPortal(
+        lightbox && <Modal />,
+        document.getElementById('modal')
+      )}
     </main>
   );
 };

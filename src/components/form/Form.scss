@@ -7,8 +7,10 @@ main {
 }
 
 .form {
-  width: 520px;
-  height: 400px;
+  width: 70%;
+  min-width: 320px;
+  max-width: 520px;
+  height: 430px;
   position: relative;
   transform: translateY(40px);
   display: flex;
@@ -26,6 +28,7 @@ main {
   &--title {
     margin: 20px 0;
     font-size: 1.8rem;
+    text-align: center;
   }
 
   & label,
