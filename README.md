@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# prueba-form-IT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Front-End React Developer
+Escribe el código en React para cumplir con los siguientes requisitos:
+Usar las mejores prácticas y estándares de programación que conozcas, lo ideal es que nos
+muestre mediante este proyecto como afrontarías un proyecto real.
+Ajustes y modificaciones al diseño son aceptadas con justificaciones
+Construir una página web HTML en react que contenga:
 
-## Available Scripts
+a. Menú simple responsive:
+i. Debe utilizarse un listado (li) para cada ítem del menú.
+ii. El menú en versión desktop debe mostrar las opciones de manera
+horizontal.
+iii. El menú en versión mobile (específicamente 920px o menos) debe
+mostrar los ítems de manera vertical.
+iv. El listado de ítems del menú se debe alimentar desde un JSON que
+puede estar en una variable o función que lo retorne, ejemplo:
+{ [id: "1", name: "Vivair"], [id: "2", name: "Avianca"] }
 
-In the project directory, you can run:
+b. Formulario:
+i. Debe incluir un texto inicial de bienvenida que cambia al seleccionar
+un item del menú (punto anterior). A continuación el texto de
+bienvenida: “Hola, bienvenido, sabemos que quieres viajar en un X
+(Donde X=Nombre del item del menú seleccionado), por favor
+diligencia el siguiente formulario:”
+ii. Campos del formulario (ninguno es opcional):
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Nombre completo.
+2. Email.
+3. Celular.
+4. Rango de edad. Desde los 18 hasta los 100años.
+   iii. Realizar las validaciones necesarias al formulario en todos lo campos
+   ojo con caracteres especiales.
+   iv. Los datos del formulario deben ser impresos en consola (nada más).
+   v. Luego de enviados los datos a la consola con éxito, debe aparecer un
+   mensaje de confirmación al usuario por medio de un Lightbox con
+   fadeout de 5 segundos (que se cierre a los 5 segundos), indicando
+   “Tu información fue enviada con éxito, estaremos en contacto
+   contigo”, reiniciando el formulario a su estado original (con los
+   campos vacíos).
