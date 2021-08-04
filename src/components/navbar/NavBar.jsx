@@ -17,6 +17,11 @@ export const NavBar = () => {
           </li>
         ))}
       </ul>
+      <button className='hamburger'>
+        <span className='bar'></span>
+        <span className='bar'></span>
+        <span className='bar'></span>
+      </button>
     </nav>
   );
 };

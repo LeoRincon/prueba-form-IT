@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Modal } from '../../components/modal';
@@ -6,6 +7,7 @@ import './Form.scss';
 export const Form = ({ name }) => {
   const [error, setError] = useState(false);
   const [lightbox, setLightbox] = useState(false);
+  const [isValided, setIsValided] = useState(false);
   const [state, setstate] = useState({
     nombre: '',
     email: '',
@@ -19,6 +21,17 @@ export const Form = ({ name }) => {
       [e.target.name]: e.target.value,
     });
   };
+
+  const validateInput = () => {
+    let validateNombre = /^[a-zA-Z\s]*$/;
+    let validateEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (validateNombre.test(state.nombre) && validateEmail.test(state.email)) {
+      if (state.edad >= 18 && state.edad <= 100) {
+        setIsValided(true);
+      }
+    }
+  };
+
   const handleClick = (e) => {
     e.preventDefault();
     if (
@@ -33,7 +46,7 @@ export const Form = ({ name }) => {
       }, 2000);
       return;
     }
-
+    validateInput();
     setLightbox(true);
 
     setTimeout(() => {
@@ -66,6 +79,7 @@ export const Form = ({ name }) => {
           name='nombre'
           onChange={actualizarState}
           placeholder='Nombre Completo'
+          pattern='^[a-zA-Z\s]*$'
         />
         <label>Email*</label>
         <input
@@ -74,6 +88,7 @@ export const Form = ({ name }) => {
           name='email'
           onChange={actualizarState}
           placeholder='example@example.com'
+          pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
         />
         <label>Celular*</label>
         <input
@@ -82,14 +97,21 @@ export const Form = ({ name }) => {
           name='celular'
           onChange={actualizarState}
           placeholder='+57 43434343'
+          maxLength='13'
+          minLength='10'
         />
         <label>Edad*</label>
-        <select type='text' name='edad' onChange={actualizarState}>
-          <option value='18 a 40'>18 a 40</option>
-          <option value='41 a 60'>41 a 60</option>
-          <option value='61 a 100'>61 a 100</option>
-        </select>
+        <input
+          value={state.edad}
+          type='number'
+          name='edad'
+          onChange={actualizarState}
+          placeholder='Rango de edad 18 - 100'
+          min='18'
+          max='100'
+        />
         <button onClick={handleClick}>Agregar</button>
+        {isValided && <p>hola</p>}
       </form>
       {ReactDOM.createPortal(
         lightbox && <Modal />,

@@ -39,6 +39,11 @@ main {
     padding: 4px;
     font-size: 1.6rem;
   }
+
+  & input:invalid {
+    border: 3px solid red;
+  }
+
   & button {
     width: 200px;
     height: 30px;
