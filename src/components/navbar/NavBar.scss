@@ -1,14 +1,13 @@
 nav {
   display: flex;
   align-items: center;
-  // width: 50px;
 }
 .navbar {
   width: 40%;
   height: 100%;
   display: flex;
   align-items: center;
-
+  z-index: 9999;
   &__list {
     list-style: none;
     cursor: pointer;
@@ -22,21 +21,17 @@ nav {
       &:hover {
         background-color: white;
         color: black;
+        border-radius: 10px;
       }
     }
   }
 }
+.btn__menu {
+  background-color: transparent;
+  border: none;
+}
 .hamburger {
   display: none;
-  // & .bar {
-  //   display: block;
-  //   width: 25px;
-  //   height: 3px;
-  //   margin: 5px auto;
-  //   -webkit-transition: all 0.3s ease-in-out;
-  //   transition: all 0.3s ease-in-out;
-  //   background-color: #101010;
-  // }
 }
 
 @media only screen and (max-width: 920px) {
@@ -50,11 +45,12 @@ nav {
     border-radius: 10px;
     text-align: center;
     transition: 0.3s;
+    background-color: #bc9adc;
+
     &__list {
       padding: 12px;
       width: 100%;
       height: 50px;
-      background-color: rgb(219, 219, 219);
       margin-right: 0px;
 
       &--item {
@@ -66,10 +62,6 @@ nav {
     right: 0px;
   }
 
-  .btn__menu {
-    background-color: transparent;
-    border: none;
-  }
   .hamburger {
     display: block;
     cursor: pointer;
